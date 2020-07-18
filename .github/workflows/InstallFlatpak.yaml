@@ -1,4 +1,4 @@
-name: Create Flatpak
+name: Create Flatpak and Build Repo
 
 on: 
   push:
