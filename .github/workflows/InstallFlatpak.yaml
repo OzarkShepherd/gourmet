@@ -29,12 +29,17 @@ jobs:
     - name: Move Files  # workaround for issue 107
       run: |
         cp /app/share/gourmet/ui/* /app/share/gourmet
-
-    - name: Add Remote Repo
-      run: |
-        flatpak --user remote-add --no-gpg-verify Gourmet repo
         
-    - name: Install Flatpak
+    - name: Build Repo
       run: |
-        flatpak --user install Gourmet io.github.thinkle.Gourmet
+        flatpak-builder --repo=repo --force-clean build-dir io.github.thinkle.Gourmet.yml
+
+# The following are commands to install the flatpak
+#    - name: Add Remote Repo 
+#      run: |
+#        flatpak --user remote-add --no-gpg-verify Gourmet repo
+        
+#    - name: Install Flatpak
+#      run: |
+#        flatpak --user install Gourmet io.github.thinkle.Gourmet
         
