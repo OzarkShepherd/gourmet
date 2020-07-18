@@ -4,7 +4,6 @@ runtime-version: '3.36'
 sdk: org.gnome.Sdk
 command: gourmet
 rename-desktop-file: gourmet.desktop
-rename-icon: gourmet.png
 finish-args:
   - --filesystem=host
   - --socket=fallback-x11
