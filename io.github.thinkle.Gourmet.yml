@@ -4,6 +4,7 @@ runtime-version: '3.36'
 sdk: org.gnome.Sdk
 command: gourmet
 rename-desktop-file: gourmet.desktop
+
 finish-args:
   - --filesystem=host
   - --socket=fallback-x11
@@ -29,7 +30,7 @@ modules:
         - --share=network
     build-commands:
       - pip3 install pyenchant sphinx pgi PyGObject gobject
-               
+
   - name: PipDependencies
     buildsystem: simple
     build-options:
@@ -42,6 +43,7 @@ modules:
     buildsystem: simple
     build-commands:
       - python3 setup.py install --prefix=/app
-    sources: 
+
+    sources:
       - type: git
         url:  https://github.com/kirienko/gourmet
